@@ -1,9 +1,9 @@
-  html {
+html {
     font-size: 52.5%;
     scroll-behavior: smooth;
 }  
 * {
- font-family: 'Open Sans', sans-serif;
+font-family: 'Open Sans', sans-serif;
 }
 body{
     display: flex;
@@ -12,16 +12,16 @@ body{
     align-items: center;
     justify-content: center;
     background: #1d2e4a;
-  }
-  body:before{
+}
+body:before{
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
     clip-path: circle(55% at right 50%);
     background: #fba311;
-  }
-  
+}
+
 .wrapper {
     position: relative;
     width: 35rem;
@@ -59,8 +59,8 @@ nav{
     width: 100px;
     background: rgba(255,255,255, 0.8);
     border-radius: 50%;
-  }
-  
+}
+
 .wrapper .form-container form h2 {
     padding-top: 11rem;
     font-size: 2.5rem;
@@ -75,13 +75,13 @@ nav{
     margin: 1rem 0;
     display: grid;
 }
-  
+
 .label {
     margin-bottom: 7px;
-    padding-left: 1rem;
     font-size: 2rem;
     color : #314458;
 }
+
 .label a{
     color:#eaa52c;
 }
@@ -129,4 +129,14 @@ nav{
     color:#eaa52c;
 }
 
+nav div a span {
+    color: #FCA507;font-size: 42px;
+    font-weight: bold;
+    padding: 9px;
+    margin-right: 5rem;
+}
 
+nav div img {
+    width: 40px;
+    height: 58px;
+}
