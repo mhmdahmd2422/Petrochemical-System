@@ -1,0 +1,193 @@
+:root {
+    --secondary: #3d3d3d; 
+    --white: #fff;
+  }
+
+html{
+    font-style: normal;
+    font-family: 'Clash Display';
+    font-size: 58.5%;
+
+
+
+}
+body {
+	background: beige;
+	font-size: 13px;
+	background-image: linear-gradient(to bottom right,#1C2E4A 50%,#FCA311 50%);		 
+}
+
+
+p, h1, ul {
+    margin: 0; }
+
+.wrapper {
+	box-sizing: border-box;
+	padding-top: 5%;
+	line-height: 1.5;
+	width: 75%;
+    height: 700%;
+	margin: 0 auto;
+	min-height: 100vh;
+}
+
+
+
+.box {
+	display:flex;
+	flex-wrap: wrap;
+}
+.box label {
+	font-weight: 700;
+	text-align: center;
+	display: block;
+	padding: 12px 30px;
+	margin-right: 14px;
+    background-color:rgba(168, 38, 38, 0);
+    background: rgba(252, 162, 17, 0);
+border: 2px solid #FCA311;
+border-bottom-color: #fff;
+border-radius: 10px;
+
+}
+.box .content {
+	display:none;
+	padding: 15px;
+	background: #fff;
+	box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.5);
+	order: 99;
+	flex-grow: 1;
+	width: 100%;
+}
+.box input[type="radio"] {
+	display: none;
+}
+.box input[type="radio"]:checked+label {
+	background: rgba(252, 163, 17, 0.84);
+}
+.box input[type="radio"]:checked+label+.content {
+	display: block;
+}
+
+.table_list{
+	border: 1px solid #1C2E4A;
+	width: 300rem;
+	max-width: 100%;
+    background: #FFFFFF;
+    box-sizing: border-box;
+
+}
+
+
+.table_list .body .main_table .table_header{
+	background:#1C2E4A;
+}
+
+.table_list .body .main_table .table_header .row{
+	color: var(--white);
+	font-size: 9px;
+	display:contents;
+}
+.table_list .body .main_table .table_header .row h1{
+	padding: 1rem;
+}
+
+
+.table_list .body .main_table .row{
+	display:flex;
+	border-right: 1px solid var(--secondary);
+
+}
+
+
+.table_list .body .main_table .row .col{
+	padding: 3px;
+}
+.table_list .body .main_table .row .col_h1{width: 12%;}
+.table_list .body .main_table .row .col_no{width: 12%;}
+.table_list .body .main_table .row .col_des{width: 45%;}
+.table_list .body .main_table .row .col_price{width: 20%; text-align: center;}
+
+  input, textarea, select, button {
+    font-family: arial;
+    color: #333;
+    font-size: 14px; }
+   
+   
+
+  .inner {
+    padding: 20px;
+    background: #fff;
+    max-width: 850px;
+    display: flex; }
+    .inner .left-holder {
+      width: 50%; }
+    .inner form {
+      width: 50%;
+      padding-left: 45px;
+	  box-sizing: border-box;
+	border-radius: 7px;
+}
+	
+	
+   
+.form-group {
+    display: flex; }
+.form-group input {
+      width: 50%; }
+   
+   
+  .form-control {
+    border: 1px solid #333;
+    
+    display: block;
+    width: 100%;
+    height: 30px;
+	padding: 0.5rem;
+    margin-bottom: 25px; 
+}
+.form-control2 {
+    border: 1px solid #333;
+    display: block;
+    width: 100%;
+    height: 30px;
+	padding: 0.5rem;
+    margin-bottom: 25px; 
+	margin-left: 30px;
+
+}
+.labe2{
+	margin-left: 27%;
+}
+
+.price{
+	width:25%;
+	height: 3.5rem;
+	color: #1EAF11;
+	box-sizing: border-box;
+	border-radius: 7px;
+}
+
+.price::-webkit-input-placeholder {
+	font-size: 12px;
+	color: #1EAF11;
+	text-align: center;
+  }
+     
+  select {
+    font-size: 14px;
+    cursor: pointer;
+    padding-left: 20px; 
+    color:  #FCA311;
+
+}
+    select option[value=""][disabled] {
+
+      display: none;
+
+	}
+
+
+
+	
+
