@@ -1,7 +1,4 @@
-:root {
-    --secondary: #3d3d3d; 
-    --white: #fff;
-  }
+
 
 html{
     font-style: normal;
@@ -26,10 +23,12 @@ p, h1, ul {
 	padding-top: 5%;
 	line-height: 1.5;
 	width: 75%;
-    height: 700%;
+    height:700%;
 	margin: 0 auto;
 	min-height: 100vh;
 }
+
+/* Rectangle 3 */
 
 
 
@@ -45,10 +44,9 @@ p, h1, ul {
 	margin-right: 14px;
     background-color:rgba(168, 38, 38, 0);
     background: rgba(252, 162, 17, 0);
-border: 2px solid #FCA311;
-border-bottom-color: #fff;
-border-radius: 10px;
-
+    border: 2px solid #FCA311;
+    border-bottom-color: #fff;
+    border-radius: 10px;
 }
 .box .content {
 	display:none;
@@ -58,6 +56,8 @@ border-radius: 10px;
 	order: 99;
 	flex-grow: 1;
 	width: 100%;
+	box-sizing: border-box;
+    height: 50rem;
 }
 .box input[type="radio"] {
 	display: none;
@@ -116,7 +116,8 @@ border-radius: 10px;
    
 
   .inner {
-    padding: 20px;
+	padding: 20px;
+	padding-top: 5rem;
     background: #fff;
     max-width: 850px;
     display: flex; }
@@ -136,7 +137,9 @@ border-radius: 10px;
 .form-group input {
       width: 50%; }
    
-   
+.form-wrapper span{
+	color: #1C2E4A;
+}
   .form-control {
     border: 1px solid #333;
     
@@ -146,6 +149,7 @@ border-radius: 10px;
 	padding: 0.5rem;
     margin-bottom: 25px; 
 }
+
 .form-control2 {
     border: 1px solid #333;
     display: block;
@@ -156,8 +160,21 @@ border-radius: 10px;
 	margin-left: 30px;
 
 }
+.form-control3 {
+    border: 1px solid #333;
+    
+    display: block;
+    width: 40%;
+    height: 30px;
+	padding: 0.5rem;
+    margin-bottom: 25px; 
+}
+
 .labe2{
 	margin-left: 27%;
+}
+.labe3{
+	margin-left: 27rem;
 }
 
 .price{
@@ -187,7 +204,53 @@ border-radius: 10px;
 
 	}
 
+	.left{
+		padding-left: 5%;
+	}
+
+	.fmap{
+		margin-top: 15%;
+	}
+	.map{
+		border: 1px solid #1C2E4A;
+		border-radius: 16px;
+		box-sizing: border-box;
+		text-align: center;
+	}
+	.map iframe{
+		margin: 1rem;
+	}
 
 
+.lprice4{
+		margin-top: 20rem;
+	}
+
+.contact-box{
+		max-width: 850px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+}
 	
+	
+.right{
+		padding: 25px 10px;
+		justify-content: left;
+		align-items: left;
+		text-align: left;
+}
+	
+.tlable{
+	padding-top: 10%;
+}
+.dlabel{
+padding-top:7rem;
+}
+.tprice{
+	padding-top: 4rem;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 
+}
+	
