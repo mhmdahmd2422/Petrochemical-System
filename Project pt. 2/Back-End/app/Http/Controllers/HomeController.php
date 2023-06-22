@@ -37,4 +37,8 @@ class HomeController extends Controller
             return view('user.home');
         }
     }
+
+    public function start_order(){
+        return view('user.raw');
+    }
 }

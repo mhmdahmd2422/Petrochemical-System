@@ -21,3 +21,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/redirect', [App\Http\Controllers\HomeController::class, 'redirect']);
+Route::get('/start_order', [App\Http\Controllers\HomeController::class, 'start_order']);
