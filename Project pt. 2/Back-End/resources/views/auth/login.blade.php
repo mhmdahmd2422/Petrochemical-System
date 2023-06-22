@@ -1,49 +1,65 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <x-validation-errors class="mb-4" />
+    <link rel="stylesheet" href="user/assets/css/login_style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
-
+    <title>Sign in </title>
+</head>
+<body>
+<nav class="">
+    <div class="container"><a class="" href="#">
+            <img src="user/assets/images/barrel_icon.jpg">
+            <span>Petro.tech</span></a>
+    </div>
+</nav>
+<div class="wrapper">
+    <div class="form-container sign-in">
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <div class="form-group">
+                <label for="email" class="label">{{ __('Email Address') }}</label>
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                       value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                @enderror
             </div>
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+            <div class="form-group">
+                <label for="password" class="label">{{ __('Password') }}</label>
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                       name="password" required autocomplete="current-password">
+
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                @enderror
             </div>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
+                <button type="submit" class="btn">
+                    {{ __('Login') }}
+                </button>
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
+                    <div class="link">
+                        <a class=" href="{{ route('password.request') }}">
+                            {{ __('Forgot Password?') }}</a>
+                    </div>
                 @endif
-
-                <x-button class="ml-4">
-                    <h4>hiiiiiiiiii</h4>
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
         </form>
-    </x-authentication-card>
-</x-guest-layout>
+    </div>
+</div>
+
+</body>
+</html>
