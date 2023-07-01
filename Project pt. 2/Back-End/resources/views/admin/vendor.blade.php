@@ -41,25 +41,31 @@
             </div>
             @endif
             <div class="div_center">
-                <h2 class="h2_font">Add Type</h2>
-                <form action="{{url('/add_type')}}" method="post">
+                <h2 class="h2_font">Add Vendor</h2>
+                <form action="{{url('/add_vendor')}}" method="post">
                     @csrf
-                    <input type="text" name="category" class="input_color" id="" placeholder="Write Type Name">
-                    <input type="number" name="price" class="input_color" id="" placeholder="Write True Price">
-                    <input type="submit" name="submit" class="btn btn-primary" value="Add Type">
+                    <input type="text" name="vendor" class="input_color" id="name" placeholder="Write Vendor Name">
+                    <input type="number" name="dis_hq" class="input_color" id="dis" placeholder="Write Distance From HQ">
+                    <input type="number" name="type" class="input_color" id="type" placeholder="Write active type id">
+                    <input type="number" name="type_price" class="input_color" id="price" placeholder="Write type price">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Add Vendor">
                 </form>
             </div>
             <table class="center">
                 <tr>
-                    <th>Type Name</th>
-                    <th>True Price</th>
+                    <th>Vendor Name</th>
+                    <th>Distance</th>
+                    <th>Active Type</th>
+                    <th>Type Price</th>
                     <th>Action</th>
                 </tr>
                 @foreach($data as $data)
                 <tr>
                     <td>{{$data->name}}</td>
-                    <td>{{$data->true_price}}</td>
-                    <td><a href="{{url('delete_type', $data->id)}}" class="btn btn-danger"
+                    <td>{{$data->dis_hq}}</td>
+                    <td>{{$data->type_id}}</td>
+                    <td>{{$data->price}}</td>
+                    <td><a href="{{url('delete_vendor', $data->id)}}" class="btn btn-danger"
                            onclick="return confirm('Are You Sure You Want To Delete?')">Delete</a></td>
                 </tr>
                 @endforeach

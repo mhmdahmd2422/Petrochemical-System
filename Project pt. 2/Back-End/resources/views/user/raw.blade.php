@@ -1,447 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-<!--divinectorweb.com-->
-<head>
-    <meta charset="UTF-8">
-    <title>MENU</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="user/assets/css/menu_style.css">
-</head>
-<body>
-<div class="wrapper">
-    <div class="box">
-        <input checked="checked" id="box1" name="box" type="radio">
-        <label class="label" for="box1">HTML</label>
-        <div class="content">
-            <div class="inner">
-                <div class="left-holder">
-                    <div class="list">
-                        <div class="table_list">
-                            <div class="body">
-                                <div class="main_table">
-                                    <div class="table_header">
-                                        <div class="row">
-                                            <h1>Types of Petroleum</h1>
-                                        </div>
+<div class="content">
+    <div class="inner">
+        <div class="left-holder">
+            <div class="list">
+                <div class="table_list">
+                    <div class="body">
+                        <div class="main_table">
+                            <div class="table_header">
+                                <div class="row">
+                                    <h1>Types of Petroleum</h1>
+                                </div>
+                            </div>
+                            <div class="table_body">
+                                @foreach($types as $type)
+                                <div class="row">
+                                    <div class="col col_no">
                                     </div>
-                                    <div class="table_body">
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$350</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$350</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$120</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$350</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-
+                                    <div class="col col_des">
+                                        <p>{{$type->name}}</p>
+                                    </div>
+                                    <div class="col col_price">
+                                        <span id="item_price">${{$type->true_price}}</span>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
-
-                </div>
-                <form action="">
-                    <span>Choose your type :</span>
-                    <span class="labe2">Manufacture company:</span>
-                    <div class="form-group">
-                        <select name="" id="" class="form-control">
-                            <option value="" disabled selected> </option>
-                            <option value=" ">Brent</option>
-                            <option value=" ">WTI</option>
-                            <option value=" ">Murban Crude</option>
-                            <option value=" ">Arab Light</option>
-                            <option value=" ">DAS</option>
-
-                        </select>
-
-                        <select name="" id="" class="form-control2">
-                            <option value="" disabled selected> </option>
-                            <option value=" ">العامة للبترول ( GPC )</option>
-                            <option value=" ">بتروجلف </option>
-                            <option value=" ">كوم أمبو </option>
-                            <option value=" ">مجاويش </option>
-                            <option value=" ">المصرية القابضة للبتروكيماويات ( ECHEM )</option>
-
-                        </select>
-
-                    </div>
-
-                    <span>Enter required quantity :</span>
-                    <div class="form-wrapper">
-
-                        <input type="number" placeholder="" class="form-control">
-
-                    </div>
-                    <span>Expected date of receipt :</span>
-                    <div class="form-wrapper">
-                        <input type="date" placeholder="Email Address" class="form-control">
-
-                    </div>
-                    <span>Total Price ( $ ) :</span>
-                    <div class="form-wrapper">
-                        <input  type="number" placeholder="0.00$" class="price" class="form-control">
-
-                    </div>
-
-                </form>
-            </div>
-
-        </div>
-        <input id="box2" name="box" type="radio">
-        <label  class="label" for="box2">CSS</label>
-        <div class="content">
-            <div class="inner">
-                <div class="left-holder">
-                    <div class="list">
-                        <div class="table_list">
-                            <div class="body">
-                                <div class="main_table">
-                                    <div class="table_header">
-                                        <div class="row">
-                                            <h1>Types of Petroleum</h1>
-                                        </div>
-                                    </div>
-                                    <div class="table_body">
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$350</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$350</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$120</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$350</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col_no">
-                                            </div>
-                                            <div class="col col_des">
-                                                <p>html.</p>
-                                            </div>
-                                            <div class="col col_price">
-                                                <p>$150</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <form action="">
-                    <span>Choose your type :</span>
-                    <div class="form-group">
-                        <select name="" id="" class="form-control">
-                            <option value="" disabled selected> </option>
-                            <option value=" ">Brent</option>
-                            <option value=" ">WTI</option>
-                            <option value=" ">Murban Crude</option>
-                            <option value=" ">Arab Light</option>
-                            <option value=" ">DAS</option>
-
-                        </select>
-
-                    </div>
-
-                    <span class="labe3">Manufacture company:</span>
-
-                    <div class="form-group">
-                        <div class="form-wrapper">
-                            <span>Expected produced quantity :</span>
-
-                            <input  type="number" placeholder="0.00$" class="price" class="form-control">
-                        </div>
-
-                        <select name="" id="" class="form-control3">
-                            <option value="" disabled selected> </option>
-                            <option value=" ">Brent</option>
-                            <option value=" ">WTI</option>
-                            <option value=" ">Murban Crude</option>
-                            <option value=" ">Arab Light</option>
-                            <option value=" ">DAS</option>
-                        </select>
-
-                    </div>
-
-
-
-                    <span>Expected date of receipt :</span>
-                    <div class="form-wrapper">
-                        <input type="date" placeholder="Email Address" class="form-control">
-
-                    </div>
-                    <span>Total Price ( $ ) :</span>
-                    <div class="form-wrapper">
-                        <input  type="number" placeholder="0.00$" class="price" class="form-control">
-
-                    </div>
-
-                </form>
-            </div>
-
-        </div>
-        <input  class="label" id="box3" name="box" type="radio">
-        <label for="box3">JAVASCRIPT</label>
-        <div class="content">
-            <div class="contact-box">
-                <div class="right">
-                    <span>Expected date of receipt :</span>
-
-                    <select name="" id="" class="form-control">
-                        <option value="" disabled selected> </option>
-                        <option value=" ">Brent</option>
-                        <option value=" ">WTI</option>
-                        <option value=" ">Murban Crude</option>
-                        <option value=" ">Arab Light</option>
-                        <option value=" ">DAS</option>
-
-                    </select>
-                    <div class="tlable"></div>
-                    <span>Total Price ( $ ) :</span>
-                    <div class="form-wrapper">
-                        <input  type="number" placeholder="0.00$" class="price" class="form-control">  <span>Total Price <small> ( per day ) </small>  </span>
-                    </div>
-                    <div class="dlabel">
-                        <span>Expected date of receipt :</span>
-                        <div class="form-wrapper">
-                            <input type="date"  class="form-control">
-                        </div>
-                    </div>
-
-                </div>
-                <div class="left">
-                    <span>Expected date of receipt :</span>
-                    <div class="map">
-
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7292343.962473447!2d36.17131218717354!3d26.817207495869056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14368976c35c36e9%3A0x2c45a00925c4c444!2z2YXYtdix!5e0!3m2!1sar!2seg!4v1686261048379!5m2!1sar!2seg" width="300" height="250"  allowfullscreen="" loading="fast" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                    </div>
-
-                    <div class="tprice">
-                        <span>Total Price ( $ ) :</span>
-                        <div class="form-wrapper">
-                            <input  type="number" placeholder="0.00$" class="price" class="form-control">
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
-        <input  class="label" id="box4" name="box" type="radio">
-        <label for="box4">CSS</label>
-        <div class="content">
-            <div class="contact-box">
-                <div class="right">
-                    <span>Expected date of receipt :</span>
+        <form action="{{url('/add_raw_data')}}" method="post">
+            @csrf
+            <span>Choose your type :</span>
+            <span class="labe2">Vendor:</span>
+            <div class="form-group">
+                <select  id="type-dropdown" name="type" class="form-control">
+                    <option value="">-- Select Type --</option>
+                    @foreach ($types as $data)
+                        <option value="{{$data->id}}">
+                            {{$data->name}}
+                        </option>
+                    @endforeach
+                </select>
 
-                    <select name="" id="" class="form-control">
-                        <option value="" disabled selected> </option>
-                        <option value=" ">Brent</option>
-                        <option value=" ">WTI</option>
-                        <option value=" ">Murban Crude</option>
-                        <option value=" ">Arab Light</option>
-                        <option value=" ">DAS</option>
+                <select id="vendor-dropdown" name="vendor" class="form-control2">
+                </select>
 
-                    </select>
-                    <div class="lprice4">
-                        <span class="lprice4">Total Price ( $ ) :</span>
-                        <div class="form-wrapper">
-                            <input  type="number" placeholder="0.00$" class="price" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="left">
-                    <span>Expected date of receipt :</span>
-                    <div class="form-wrapper">
-                        <input type="date"  class="form-control">
-                    </div>
-
-                    <div class="fmap">
-                        <span>Expected date of receipt :</span>
-                        <div class="map">
-
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7292343.962473447!2d36.17131218717354!3d26.817207495869056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14368976c35c36e9%3A0x2c45a00925c4c444!2z2YXYtdix!5e0!3m2!1sar!2seg!4v1686261048379!5m2!1sar!2seg" width="300" height="250"  allowfullscreen="" loading="fast" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
+
+            <span>Enter Required Quantity (Barrels) :</span>
+            <div class="form-wrapper">
+
+                <input id="quantity" type="number" name="quantity" placeholder="" class="form-control">
+
+            </div>
+            <span>Expected date of receipt :</span>
+            <div class="form-wrapper">
+                <input id="date" type="date" name="date" placeholder="Email Address" class="form-control">
+
+            </div>
+            <span>Total Price ( $ ) :</span>
+            <div class="form-wrapper" id="price">
+                <input id="total_price" name="total_price"  type="number" placeholder="0.00$" class="price" class="form-control">
+            </div>
+            <div class="form-wrapper">
+                <input type="submit" name="submit" class="btn btn-primary" value="Proceed">
+            </div>
+        </form>
     </div>
-</body>
-</html>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        /*------------------------------------------
+        --------------------------------------------
+        Country Dropdown Change Event
+        --------------------------------------------
+        --------------------------------------------*/
+        $('#type-dropdown').on('change', function () {
+            var idtype = this.value;
+            $("#vendor-dropdown").html('');
+            $.ajax({
+                url: "{{url('api/fetch-states')}}",
+                type: "POST",
+                data: {
+                    type_id: idtype,
+                    _token: '{{csrf_token()}}'
+                },
+                dataType: 'json',
+                success: function (result) {
+                    $('#vendor-dropdown').html('<option value="">-- Select Vendor --</option>');
+                    $.each(result.vendors, function (key, value) {
+                        $("#vendor-dropdown").append('<option value="' + value
+                            .id + '">' + value.name + '</option>');
+                    });
+                }
+            });
+        });
+
+        $('#vendor-dropdown').on('change', function () {
+            var vendor = this.value;
+            $("#total_price").html('');
+            $.ajax({
+                url: "{{url('api/fetch-price')}}",
+                type: "POST",
+                data: {
+                    vendor: vendor,
+                    _token: '{{csrf_token()}}'
+                },
+                dataType: 'json',
+                success: function (result) {
+                    $.each(result.vendor, function (key, value) {
+
+                        $("#price").append('<input hidden value="' + value.price +'" id="unit_price">');
+                    });
+                    // $('#price').append('<div>Price Per Unit: <span>value.price</span></div>');
+                }
+            });
+        });
+
+        $(function() {  //  In jQuery 1.6+ this is same as $(document).ready(function(){})
+            $('#quantity, #item_price')  //  jQuery CSS selector grabs elements with the ID's "quantity" & "item_price"
+                .on('change', function (e) {  //  jQuery 1.6+ replcement for .live (dynamically asigns event, see jQuery API)
+                    //  in this case, our event is "change" which works on inputs and selects to let us know when a value is changed
+                    //  below i use inline if statements to assure the values i get are "Real"
+                    var quan = $("#quantity").val() != "" ? parseFloat($("#quantity").val()) : 1,  //  Get quantity value
+                        price = $("#unit_price").val() != "" ? parseFloat($("#unit_price").val()) : 0;
+                    var d = new Date();
+                    var month = d.getMonth()+1;
+                    var day = d.getDate()+quan/2;
+                    var output = d.getFullYear() + '-' +
+                        (month<10 ? '0' : '') + month + '-' +
+                        (day<10 ? '0' : '') + day;//  Get price value
+                    $('#total_price').val(price * quan); // show total
+                    $('#date').val(output);
+                });
+
+        });
+    });
+</script>

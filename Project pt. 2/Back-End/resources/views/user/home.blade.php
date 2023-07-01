@@ -17,30 +17,17 @@
 
 <div class="container">
     <form action="#">
-        <h1>Products :</h1>
+        <h1>Raw Products:</h1>
         <div class="fields">
+            @foreach($type as $type)
             <div class="input-field">
-                <p> <i class="fas fa-circle" style="color: #fac311;"></i> Brent   <small> 86.59 $ </small> </p>
+                <p> <i class="fas fa-circle" style="color: #fac311;"></i> {{$type->name}}   <small> {{$type->true_price}} $ </small> </p>
             </div>
-            <div class="input-field">
-                <p> <i class="fas fa-circle" style="color: #fac311;"></i> Brent   <small> 86.59 $ </small> </p>
-            </div>
-            <div class="input-field">
-                <p> <i class="fas fa-circle" style="color: #fac311;"></i> Brent   <small> 86.59 $ </small> </p>
-            </div>
-            <div class="input-field">
-                <p> <i class="fas fa-circle" style="color: #fac311;"></i> Brent   <small> 86.59 $ </small> </p>
-            </div>
-            <div class="input-field">
-                <p> <i class="fas fa-circle" style="color: #fac311;"></i> Brent   <small> 86.59 $ </small> </p>
-            </div>
-            <div class="input-field">
-                <p> <i class="fas fa-circle" style="color: #fac311;"></i> Brent   <small> 86.59 $ </small> </p>
-            </div>
+            @endforeach
         </div>
 
         <div class="line"></div>
-        <h1>Products :</h1>
+        <h1>Offshore/Onshore wells:</h1>
         <div class="fields">
             <div class="input-field">
                 <p> <i class="fas fa-circle" style="color: #fac311;"></i> Brent   <small> 86.59 $ </small> </p>
@@ -64,13 +51,13 @@
 
         <div class="line"></div>
 
-        <h1>Products :</h1>
+        <h1>Importers from abroad:</h1>
         <div class="fields">
             <div class="input-field">
                 <h2>In Europe :</h2>
             </div>
             <div class="input-field">
-                <h2>In Europe :</h2>
+                <h2>In America :</h2>
             </div>
 
 

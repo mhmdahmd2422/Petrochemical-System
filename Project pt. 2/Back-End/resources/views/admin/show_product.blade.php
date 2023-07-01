@@ -48,16 +48,13 @@
                     {{session()->get('message')}}
                 </div>
             @endif
-            <h2 class="font_size">All Products</h2>
+            <h2 class="font_size">Vendors Products</h2>
             <table class="center">
                 <tr class="th_color">
-                    <th>Product Title</th>
-                    <th>Description</th>
-                    <th>Quantity</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Discount Price</th>
-                    <th>Product Image</th>
+                    <th>Vendor Name</th>
+                    <th>Distance</th>
+                    <th>Total Quantity</th>
+                    <th>Types</th>
                     <th class="option">Delete</th>
                     <th class="option">Edit</th>
                 </tr>

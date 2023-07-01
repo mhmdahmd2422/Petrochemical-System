@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Type;
+use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,10 +24,6 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
-    }
 
     public function redirect(){
         $usertype = Auth::user()->usertype;
@@ -34,11 +32,8 @@ class HomeController extends Controller
             return view('admin.home');
         }
         else{
-            return view('user.home');
+            $type = Type::all();
+            return view('user.home', compact('type'));
         }
-    }
-
-    public function start_order(){
-        return view('user.raw');
     }
 }
