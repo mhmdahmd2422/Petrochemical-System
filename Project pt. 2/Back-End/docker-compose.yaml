@@ -10,6 +10,8 @@ services:
     volumes:
       - .:/usr/src/app
       - ./public:/usr/src/app/public
+    depends_on:
+      - petrotech_db
 
   petrotec_server:
     container_name: petrotec_Server
@@ -20,6 +22,8 @@ services:
       - ./public:/usr/src/app/public
     ports:
       - 8000:80
+    depends_on:
+      - petrotech
     environment:
       NGINX_FPM_HOST: petrotech
       NGINX_ROOT: /usr/src/app/public
