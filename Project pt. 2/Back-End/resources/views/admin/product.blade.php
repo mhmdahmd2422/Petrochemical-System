@@ -3,6 +3,7 @@
 <head>
     <!-- Required meta tags -->
     @include('admin.css')
+
     <style type="text/css">
         .div_center{
             text-align: center;
@@ -14,14 +15,13 @@
         }
         .input_color{
             color: black;
-            padding-bottom: 1.5rem;
         }
-        label{
-            display: inline-block;
-            width: 12.5rem;
-        }
-        .div_design{
-            padding-bottom: 1rem;
+        .center{
+            margin: auto;
+            width: 50%;
+            text-align: center;
+            margin-top: 2rem;
+            border: 2px solid white;
         }
     </style>
 </head>
@@ -35,53 +35,35 @@
     <div class="main-panel">
         <div class="content-wrapper">
             @if(session()->has('message'))
-                <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
-                    {{session()->get('message')}}
-                </div>
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
+                {{session()->get('message')}}
+            </div>
             @endif
             <div class="div_center">
-                <h2 class="h2_font">Add Products</h2>
-                <form action="{{url('/add_product')}}" method="post" enctype="multipart/form-data">
+                <h2 class="h2_font">Add Product</h2>
+                <form action="{{url('/add_product')}}" method="post">
                     @csrf
-                    <div class="div_design">
-                        <label for="title">Product Title</label>
-                        <input type="text" name="title" class="input_color" required="">
-                    </div>
-                    <div class="div_design">
-                        <label for="description">Product Description</label>
-                        <input type="text" name="description" class="input_color" required="">
-                    </div>
-                    <div class="div_design">
-                        <label for="quantity">Product Quantity</label>
-                        <input type="number" name="quantity" min="0" class="input_color" required="">
-                    </div>
-                    <div class="div_design">
-                        <label for="price">Product Price</label>
-                        <input type="number" name="price" class="input_color" required="">
-                    </div>
-                    <div class="div_design">
-                        <label for="discount">Product Discount</label>
-                        <input type="number" name="discount" class="input_color">
-                    </div>
-                    <div class="div_design">
-                        <label for="category">Product Category</label>
-                        <select name="category" id="" class="input_color" required="">
-                            <option value="" selected="">Choose Category</option>
-                            @foreach($category as $category)
-                                <option value="{{$category->category_name}}">{{$category->category_name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="div_design">
-                        <label for="image">Product Image</label>
-                        <input type="file" name="image" required="">
-                    </div>
-                    <div class="div_design">
-                        <input type="submit" value="Add Product" class="btn btn-success">
-                    </div>
+                    <input type="text" name="product" class="input_color" id="" placeholder="Write Product Name">
+                    <input type="number" name="price" class="input_color" id="" placeholder="Write True Price">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Add Product">
                 </form>
             </div>
+            <table class="center">
+                <tr>
+                    <th>Product Name</th>
+                    <th>True Price</th>
+                    <th>Action</th>
+                </tr>
+                @foreach($data as $data)
+                <tr>
+                    <td>{{$data->name}}</td>
+                    <td>{{$data->true_price}}</td>
+                    <td><a href="{{url('delete_product', $data->id)}}" class="btn btn-danger"
+                           onclick="return confirm('Are You Sure You Want To Delete?')">Delete</a></td>
+                </tr>
+                @endforeach
+            </table>
         </div>
     </div>
     <!-- main-panel ends -->

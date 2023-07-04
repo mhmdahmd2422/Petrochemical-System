@@ -69,13 +69,13 @@
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-                <span class="menu-title">Products</span>
+                <span class="menu-title">Production</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{url('view_product')}}">Add Products</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{url('/show_product')}}">Show Products</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{url('view_product')}}">Products</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{url('view_manufacturer')}}">Manufacturers</a></li>
                 </ul>
             </div>
         </li>
@@ -84,7 +84,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-                <span class="menu-title">Category</span>
+                <span class="menu-title">Types</span>
             </a>
         </li>
         <li class="nav-item menu-items">
@@ -93,6 +93,22 @@
                 <i class="mdi mdi-playlist-play"></i>
               </span>
                 <span class="menu-title">Vendors</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('view_storage')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+                <span class="menu-title">Storage</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('view_transport')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+                <span class="menu-title">Transport</span>
             </a>
         </li>
     </ul>

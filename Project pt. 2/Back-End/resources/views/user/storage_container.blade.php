@@ -11,9 +11,9 @@
 <body>
 <div class="wrapper">
     <div class="box">
-        <input checked="checked" id="box1" name="box" type="radio">
         <label class="label" for="box1">Raw Material</label>
         <label class="label" for="box2">Production</label>
+        <input checked="checked" id="box1" name="box" type="radio">
         <label for="box3">Storage</label>
         @include('user.storage')
         <label for="box4">Transportation</label>

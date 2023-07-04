@@ -56,12 +56,12 @@
             </div>
             <span>Expected date of receipt :</span>
             <div class="form-wrapper">
-                <input id="date" type="date" name="date" placeholder="Email Address" class="form-control">
+                <input id="date" type="date" name="date" placeholder="Email Address" class="form-control" disabled>
 
             </div>
             <span>Total Price ( $ ) :</span>
             <div class="form-wrapper" id="price">
-                <input id="total_price" name="total_price"  type="number" placeholder="0.00$" class="price" class="form-control">
+                <input id="total_price" name="total_price"  type="number" placeholder="0.00$" class="price" class="form-control" disabled>
             </div>
             <div class="form-wrapper">
                 <input type="submit" name="submit" class="btn btn-primary" value="Proceed">
@@ -101,16 +101,16 @@
         });
 
         $('#vendor-dropdown').on('change', function () {
-            var vendor = this.value;
-            $("#total_price").html('');
-            $.ajax({
-                url: "{{url('api/fetch-price')}}",
-                type: "POST",
-                data: {
-                    vendor: vendor,
-                    _token: '{{csrf_token()}}'
-                },
-                dataType: 'json',
+                    var vendor = this.value;
+                    $("#total_price").html('');
+                    $.ajax({
+                        url: "{{url('api/fetch-price')}}",
+                        type: "POST",
+                        data: {
+                            vendor: vendor,
+                            _token: '{{csrf_token()}}'
+                        },
+                        dataType: 'json',
                 success: function (result) {
                     $.each(result.vendor, function (key, value) {
 
