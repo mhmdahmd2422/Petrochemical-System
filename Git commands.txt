@@ -1,0 +1,11 @@
+git remote add main https://github.com/mhmdahmd2422/Petrochemical-System.git
+
+git status
+
+git add .
+
+git commit -m 'message'
+
+git push main [branch name]
+
+git pull main [branch name]
