@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Manufacturer;
 use App\Models\Product;
 use App\Models\Type;
 use App\Models\User;
@@ -114,6 +115,37 @@ class DatabaseSeeder extends Seeder
         Product::create([
             'name' => 'Butane',
             'true_price' => '130',
+        ]);
+
+        Manufacturer::create([
+           'name' => 'EGPC',
+           'product' => '1',
+           'price' => '11',
+           'dis_hq' => '200',
+        ]);
+        Manufacturer::create([
+            'name' => 'APC',
+            'product' => '1',
+            'price' => '11',
+            'dis_hq' => '200',
+        ]);
+        Manufacturer::create([
+            'name' => 'MISR',
+            'product' => '1',
+            'price' => '11',
+            'dis_hq' => '200',
+        ]);
+        Manufacturer::create([
+            'name' => 'NPC',
+            'product' => '1',
+            'price' => '11',
+            'dis_hq' => '200',
+        ]);
+        Manufacturer::create([
+            'name' => 'ECHEM',
+            'product' => '1',
+            'price' => '11',
+            'dis_hq' => '200',
         ]);
     }
 }
