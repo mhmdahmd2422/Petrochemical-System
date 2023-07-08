@@ -33,7 +33,7 @@
             <span>Storage Location :</span>
             <div id="map_con">
             <div class="map" id="map">
-                <iframe id="frame" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBydKVBN7SPKF3vzuNCUPjw0grIl4XqJzU&q=31.3367206,30.0607478" width="300" height="250"></iframe>
+                <iframe id="frame" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBydKVBN7SPKF3vzuNCUPjw0grIl4XqJzU&q=egypt" width="300" height="250"></iframe>
 {{--                <iframe width="300" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=250&amp;hl=en&amp;q=31.338903087635018,%2030.066586732042445+(Your%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>--}}
 {{--                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7292343.962473447!2d36.17131218717354!3d26.817207495869056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14368976c35c36e9%3A0x2c45a00925c4c444!2z2YXYtdix!5e0!3m2!1sar!2seg!4v1686261048379!5m2!1sar!2seg" width="300" height="250"  allowfullscreen="" loading="fast" referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
             </div>

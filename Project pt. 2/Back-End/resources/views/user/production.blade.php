@@ -131,7 +131,6 @@
                             var d = new Date();
                             var month = d.getMonth()+1;
                             var day = Math.min(Math.max(parseInt(d.getDate()+quan/2), 1), 30);
-                            alert(day);
                             var output = d.getFullYear() + '-' +
                                 (month<10 ? '0' : '') + month + '-' +
                                 (day<10 ? '0' : '') + day;//  Get price value

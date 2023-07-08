@@ -76,7 +76,7 @@
                 @enderror
             </div>
             <div class="input-field">
-                <label> Comfirm Password :</label>
+                <label> Confirm Password :</label>
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required
                        autocomplete="new-password">
             </div>

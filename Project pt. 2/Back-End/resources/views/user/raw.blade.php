@@ -113,7 +113,6 @@
 
                         $("#price").append('<input hidden value="' + value.price +'" id="unit_price">');
                     });
-                    // $('#price').append('<div>Price Per Unit: <span>value.price</span></div>');
                 }
             });
         });
