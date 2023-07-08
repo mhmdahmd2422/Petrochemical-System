@@ -1,8 +1,9 @@
 <div class="content">
-    <div class="contact-box">
+    <form class="contact-box" action="{{url('/add_trans_data')}}" method="post">
+        @csrf
         <div class="right">
             <span>Choose Transfer method :</span>
-            <select name="" id="method-dropdown" class="form-control">
+            <select name="transport" id="method-dropdown" class="form-control">
                 <option value="">-- Select Method --</option>
                 @foreach ($transport as $data)
                     <option value="{{$data->id}}">
@@ -14,21 +15,21 @@
             <div class="lprice4">
                 <span class="lprice4">Shipping charges :</span>
                 <div class="form-wrapper">
-                    <input  type="number" placeholder="0.00$" class="price" class="form-control"> <span>/ <small> barrel </small>  </span>
+                    <input name="price" id="unit_price" type="number" placeholder="0.00$" class="price" class="form-control"> <span>/ <small> barrel </small>  </span>
                 </div>
             </div>
 
             <div class="lprice4" id="price-con">
-                <span class="lprice4">Total Transportation charges :</span>
-                <div class="form-wrapper" id="price">
-                    <input  type="number" placeholder="0.00$" class="price" class="form-control">
+{{--                <span class="lprice4">Total Transportation charges :</span>--}}
+                <div class="form-wrapper" >
+                    <input hidden id="price" name="quantity" type="number" placeholder="0.00$" class="price" class="form-control">
                 </div>
             </div>
         </div>
         <div class="left">
             <span>Expected delivery date :</span>
             <div class="form-wrapper">
-                <input type="date"  class="form-control">
+                <input id="date" type="date"  class="form-control">
             </div>
 
             <div class="fmap">
@@ -39,17 +40,18 @@
 
                 </div>
             </div>
+            <button type="submit">NEXT ></button>
         </div>
+    </form>
     </div>
 </div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
 
         $('#method-dropdown').on('change', function () {
-            alert('this work');
             var method = this.value;
-            $("#price_con").html('');
+            $("#unit_price").html('');
             $.ajax({
                 url: "{{url('api/fetch-trans-price')}}",
                 type: "POST",
@@ -61,12 +63,45 @@
                 success: function (result) {
                     $.each(result.transportation, function (key, value) {
 
-                        $("#price").append('<input type="number" placeholder="0.00 EGP" class="price" class="form-control" value="' + value.price +'" id="unit_price">');
+                        $("#unit_price").val(value.price);
                         // $("#map").append('<iframe width="300" height="250" src="' + value.loc +'></iframe>');
                     });
                     // $('#price').append('<div>Price Per Unit: <span>value.price</span></div>');
                 }
             });
+            $("#price").html('')
+            $.ajax({
+                url: "{{url('api/fetch-total-price')}}",
+                type: "POST",
+                data: {
+                    _token: '{{csrf_token()}}'
+                },
+                dataType: 'json',
+                success: function (result) {
+                    $.each(result.storage_quantity, function (key, value) {
+                        $("#price").val(value.quantity);
+                    });
+                    // $('#price').append('<div>Price Per Unit: <span>value.price</span></div>');
+                }
+            });
+        });
+
+        $(function() {  //  In jQuery 1.6+ this is same as $(document).ready(function(){})
+            $('#method-dropdown')  //  jQuery CSS selector grabs elements with the ID's "quantity" & "item_price"
+                .on('change', function (e) {  //  jQuery 1.6+ replcement for .live (dynamically asigns event, see jQuery API)
+                    //  in this case, our event is "change" which works on inputs and selects to let us know when a value is changed
+                    //  below i use inline if statements to assure the values i get are "Real"
+                    // var quan = $("#total_price").val() != "" ? parseInt($("#total_price").val()) : 1
+                    $("#date").html('');
+                    var d = new Date();
+                    var month = d.getMonth();
+                    var day = d.getDate()+14;
+                    var output = d.getFullYear() + '-' +
+                        (month<10 ? '0' : '') + month + '-' +
+                        (day<10 ? '0' : '') + day;//  Get price value
+                    $('#date').val(output);
+                });
+
         });
 
         // $(function() {  //  In jQuery 1.6+ this is same as $(document).ready(function(){})

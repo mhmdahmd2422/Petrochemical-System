@@ -59,10 +59,13 @@ Route::post('/add_prod_data', [\App\Http\Controllers\ProdController::class, 'add
 
 Route::get('/storage_order', [\App\Http\Controllers\StorageController::class, 'index']);
 Route::post('api/fetch-unit-price', [\App\Http\Controllers\StorageController::class, 'fetchPrice']);
+Route::post('api/fetch-unit-loc', [\App\Http\Controllers\StorageController::class, 'fetchloc']);
+Route::post('api/fetch-total-price', [\App\Http\Controllers\StorageController::class, 'fetchquantity']);
+Route::post('/add_storage_data', [\App\Http\Controllers\StorageController::class, 'add_storage_data']);
 
 Route::get('/trans_order', [\App\Http\Controllers\TransController::class, 'index']);
 Route::post('api/fetch-trans-price', [\App\Http\Controllers\TransController::class, 'fetchPrice']);
+Route::post('/add_trans_data', [\App\Http\Controllers\TransController::class, 'add_trans_data']);
 
-//    Route::get('/view_category', [AdminController::class, 'view_category']);
-//Route::post('/add_category', [AdminController::class, 'add_category']);
-//Route::get('/delete_category/{id}', [AdminController::class, 'delete_category']);
+Route::get('/payment', [\App\Http\Controllers\PaymentController::class, 'index']);
+Route::post('/add_payment_data', [\App\Http\Controllers\PaymentController::class, 'add_payment_data']);

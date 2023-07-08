@@ -47,7 +47,7 @@
 
                     <div class="form-group">
                         <div class="form-wrapper">
-                            <span>Expected produced quantity :</span>
+                            <span>Required quantity :</span>
 
                             <input id="quantity" name="quantity" type="number" placeholder="0 /Liters" class="price" class="form-control">
                         </div>
@@ -65,10 +65,7 @@
                     <div class="form-wrapper" id="price">
                         <input id="total_price" name="total_price"  type="number" placeholder="0.00 EGP" class="price" class="form-control">
                     </div>
-
-                    <div class="form-wrapper">
-                        <input type="submit" name="submit" class="btn btn-primary" value="Proceed">
-                    </div>
+                    <button>NEXT ></button>
                 </form>
             </div>
 
@@ -133,7 +130,8 @@
                                 price = $("#unit_price").val() != "" ? parseFloat($("#unit_price").val()) : 0;
                             var d = new Date();
                             var month = d.getMonth()+1;
-                            var day = d.getDate()+quan/2;
+                            var day = Math.min(Math.max(parseInt(d.getDate()+quan/2), 1), 30);
+                            alert(day);
                             var output = d.getFullYear() + '-' +
                                 (month<10 ? '0' : '') + month + '-' +
                                 (day<10 ? '0' : '') + day;//  Get price value

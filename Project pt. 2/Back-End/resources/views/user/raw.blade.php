@@ -61,14 +61,11 @@
             </div>
             <span>Total Price ( $ ) :</span>
             <div class="form-wrapper" id="price">
-                <input id="total_price" name="total_price"  type="number" placeholder="0.00$" class="price" class="form-control" disabled>
+                <input id="total_price" name="total_price"  type="number" placeholder="0.00$" class="price" class="form-control">
             </div>
-            <div class="form-wrapper">
-                <input type="submit" name="submit" class="btn btn-primary" value="Proceed">
-            </div>
+            <button type="submit">NEXT ></button>
         </form>
     </div>
-
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -130,7 +127,7 @@
                         price = $("#unit_price").val() != "" ? parseFloat($("#unit_price").val()) : 0;
                     var d = new Date();
                     var month = d.getMonth()+1;
-                    var day = d.getDate()+quan/2;
+                    var day = Math.min(Math.max(parseInt(d.getDate()+quan/2), 1), 30);
                     var output = d.getFullYear() + '-' +
                         (month<10 ? '0' : '') + month + '-' +
                         (day<10 ? '0' : '') + day;//  Get price value

@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Manufacturer;
 use App\Models\Product;
+use App\Models\Storage;
+use App\Models\Transport;
 use App\Models\Type;
 use App\Models\User;
 use App\Models\Vendor;
@@ -43,109 +45,49 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$10$a5iWf/bTizVRmcXWymxUvuq9K2PaGpvYvXyEgJppsbMJ5ZWR8wZjO',
         ]);
 
-        Type::create([
-            'name' => 'Brent',
-            'true_price' => '89',
-        ]);
-        Type::create([
-            'name' => 'WTI',
-            'true_price' => '79',
-        ]);
-        Type::create([
-            'name' => 'Arab Light',
-            'true_price' => '86',
-        ]);
-        Type::create([
-            'name' => 'Bonny Light',
-            'true_price' => '86',
-        ]);
-        Type::create([
-            'name' => 'ESPO',
-            'true_price' => '75',
-        ]);
-        Type::create([
-            'name' => 'DAS',
-            'true_price' => '82',
-        ]);
-        Type::create([
-            'name' => 'Basrah Medium',
-            'true_price' => '81',
-        ]);
-        Type::create([
-            'name' => 'Azeri Light',
-            'true_price' => '94',
-        ]);
-        Type::create([
-            'name' => 'Murbane Crude',
-            'true_price' => '84',
-        ]);
-        Type::create([
-            'name' => 'Iran Light',
-            'true_price' => '83',
+        $this->call([
+            TypeSeeder::class,
+            VendorSeeder::class,
+            ProductSeeder::class,
+            ManufacturerSeeder::class,
         ]);
 
-        Vendor::create([
-           'type_id' => '1',
-           'name' => 'GPC',
-           'price' => '92',
-           'dis_hq' => '200',
+        Storage::create([
+            'name' => 'Offshore Storage',
+            'price' => '7000',
+            'location' => 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBydKVBN7SPKF3vzuNCUPjw0grIl4XqJzU&q=31.3367206,30.0607478'
         ]);
-        Vendor::create([
-            'type_id' => '1',
-            'name' => 'ECHEM',
-            'price' => '92',
-            'dis_hq' => '200',
+        Storage::create([
+            'name' => 'Underground Storage',
+            'price' => '9000',
+            'location' => 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBydKVBN7SPKF3vzuNCUPjw0grIl4XqJzU&q=31.0196327,32.9873243'
         ]);
-        Product::create([
-           'name' => 'Broban',
-           'true_price' => '10767',
+        Storage::create([
+            'name' => 'Ship Storage',
+            'price' => '5500',
+            'location' => 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBydKVBN7SPKF3vzuNCUPjw0grIl4XqJzU&q=31.2147972,32.34368'
         ]);
-        Product::create([
-            'name' => 'Octane 95',
-            'true_price' => '10',
-        ]);
-        Product::create([
-            'name' => 'Diesel',
-            'true_price' => '7',
-        ]);
-        Product::create([
-            'name' => 'Kerosene',
-            'true_price' => '8',
-        ]);
-        Product::create([
-            'name' => 'Butane',
-            'true_price' => '130',
+        Storage::create([
+            'name' => 'Tank Storage',
+            'price' => '2500',
+            'location' => 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBydKVBN7SPKF3vzuNCUPjw0grIl4XqJzU&q=31.1378698,33.7823016'
         ]);
 
-        Manufacturer::create([
-           'name' => 'EGPC',
-           'product' => '1',
-           'price' => '11',
-           'dis_hq' => '200',
+        Transport::create([
+            'name' => 'Marine Vessels',
+            'price' => '900',
         ]);
-        Manufacturer::create([
-            'name' => 'APC',
-            'product' => '1',
-            'price' => '11',
-            'dis_hq' => '200',
+        Transport::create([
+            'name' => 'Tank Trucks',
+            'price' => '300',
         ]);
-        Manufacturer::create([
-            'name' => 'MISR',
-            'product' => '1',
-            'price' => '11',
-            'dis_hq' => '200',
+        Transport::create([
+            'name' => 'Pipelines',
+            'price' => '150',
         ]);
-        Manufacturer::create([
-            'name' => 'NPC',
-            'product' => '1',
-            'price' => '11',
-            'dis_hq' => '200',
-        ]);
-        Manufacturer::create([
-            'name' => 'ECHEM',
-            'product' => '1',
-            'price' => '11',
-            'dis_hq' => '200',
+        Transport::create([
+            'name' => 'Rail Trucks',
+            'price' => '400',
         ]);
     }
 }
